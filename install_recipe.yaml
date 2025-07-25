@@ -63,4 +63,4 @@ tasks:
 
   # Clean Up ./tmp
   - action: remove_path
-    src: ./tmp
+    path: ./tmp
