@@ -4,13 +4,6 @@ version: v1.0.0
 author: hooddarian (theDigitalFire)
 name: FiveM Basic Server
 
-
-variables:
-  dbHost: localhost # Change Me
-  dbPort: 3306 # Change Me
-  dbUsername: root # Change Me
-  dbPassword: "" # Change Me
-
 tasks: 
   # Cfx Data
   - action: download_github
