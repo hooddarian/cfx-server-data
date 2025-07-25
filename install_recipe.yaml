@@ -43,7 +43,7 @@ tasks:
 
   - action: unzip
     src: ./tmp/ox_lib-latest.zip
-    dest: ./tmp/ox_lib-latest
+    dest: ./tmp
 
   - action: move_path
     src: ./tmp/ox_lib-latest/ox_lib
@@ -55,7 +55,7 @@ tasks:
 
   - action: unzip
     src: ./tmp/oxmysql-latest.zip
-    dest: ./tmp/oxmysql-latest
+    dest: ./tmp
 
   - action: move_path
     src: ./tmp/oxmysql-latest/oxmysql
