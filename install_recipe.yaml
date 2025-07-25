@@ -1,0 +1,66 @@
+$engine: 3
+$onesync: on
+version: v1.0.0
+author: hooddarian (theDigitalFire)
+name: FiveM Basic Server
+
+
+variables:
+  dbHost: localhost # Change Me
+  dbPort: 3306 # Change Me
+  dbUsername: root # Change Me
+  dbPassword: "" # Change Me
+
+tasks: 
+  # Cfx Data
+  - action: download_github
+    src: https://github.com/hooddarian/cfx-server-data
+    ref: master
+    dest: ./.
+
+  - action: remove_path
+    path: ./resources/[system]/chat
+
+  - action: remove_path
+    path: ./install_recipe.yaml
+
+  - action: remove_path
+    path: ./README.md
+
+  - action: ensure_dir
+    path: ./tmp
+
+  - action: ensure_dir
+    path: ./resources/[script]
+
+  # Community Ox
+  - action: ensure_dir
+    path: ./resources/[script]/[cox]
+
+  - action: download_file
+    url: https://github.com/CommunityOx/ox_lib/releases/latest/download/ox_lib.zip
+    path: ./tmp/ox_lib-latest.zip
+
+  - action: unzip
+    src: ./tmp/ox_lib-latest.zip
+    path: ./tmp/ox_lib-latest
+
+  - action: move_path
+    src: ./tmp/ox_lib-latest/ox_lib
+    dest: ./resources/[script]/[cox]/ox_lib
+
+  - action: download_file
+    url: https://github.com/CommunityOx/oxmysql/releases/latest/download/oxmysql.zip
+    path: ./tmp/oxmysql-latest.zip
+
+  - action: unzip
+    src: ./tmp/oxmysql-latest.zip
+    path: ./tmp/oxmysql-latest
+
+  - action: move_path
+    src: ./tmp/oxmysql-latest/oxmysql
+    dest: ./resources/[script]/[cox]/oxmysql
+
+  # Clean Up ./tmp
+  - action: remove_path
+    src: ./tmp
