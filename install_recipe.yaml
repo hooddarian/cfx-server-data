@@ -39,7 +39,7 @@ tasks:
     dest: ./tmp
 
   - action: move_path
-    src: ./tmp/ox_lib-latest/ox_lib
+    src: ./tmp/ox_lib
     dest: ./resources/[script]/[cox]/ox_lib
 
   - action: download_file
@@ -51,7 +51,7 @@ tasks:
     dest: ./tmp
 
   - action: move_path
-    src: ./tmp/oxmysql-latest/oxmysql
+    src: ./tmp/oxmysql
     dest: ./resources/[script]/[cox]/oxmysql
 
   # Clean Up ./tmp
